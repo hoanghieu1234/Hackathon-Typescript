@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student List</title>
+  <style>
+    /* Định dạng bảng */
+    .student-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .student-table th,
+    .student-table td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .student-table th {
+      background-color: #f2f2f2;
+    }
+
+    /* Định dạng form */
+    .student-form {
+      margin-top: 20px;
+    }
+
+    .student-form input[type="text"],
+    .student-form input[type="number"],
+    .student-form select {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .student-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    th.sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th class="sortable">Name</th>
+          <th class="sortable">Age</th>
+          <th class="sortable">Sex</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu sinh viên sẽ được tạo bằng TypeScript và đổ vào đây -->
+      </tbody>
+    </table>
+  </div>
+  <div class="student-form">
+    <h2>Thêm mới sinh viên</h2>
+    <form id="new-student-form">
+      <label for="name">Tên sinh viên:</label>
+      <input type="text" id="name" required>
+
+      <label for="age">Tuổi:</label>
+      <input type="number" id="age" required>
+
+      <label for="sex">Giới tính:</label>
+      <select id="sex" required>
+        <option value="MALE">Nam</option>
+        <option value="FEMALE">Nữ</option>
+      </select>
+
+      <input type="submit" value="Thêm sinh viên">
+    </form>
+  </div>
+  <!-- Thêm form cập nhật sinh viên -->
+  <div id="update-student-form-container">
+    <h2>Cập nhật thông tin sinh viên</h2>
+    <form id="update-student-form">
+      <label for="update-name">Tên sinh viên:</label>
+      <input type="text" id="update-name" required>
+
+      <label for="update-age">Tuổi:</label>
+      <input type="number" id="update-age" required>
+
+      <label for="update-sex">Giới tính:</label>
+      <select id="update-sex" required>
+        <option value="MALE">Nam</option>
+        <option value="FEMALE">Nữ</option>
+      </select>
+
+      <input type="submit" value="Cập nhật thông tin">
+    </form>
+  </div>
+
+  <div id="root"></div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
